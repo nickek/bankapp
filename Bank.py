@@ -4,9 +4,9 @@ from User import *
 
 class Bank(User):
 
-    def __init__(self, name, password, age, checking, saving):
+    def __init__(self, name, password, checking, saving):
         # Inherent attributes from user
-        super().__init__(name, password, age)
+        super().__init__(name, password)
         self.checking = checking
         self.saving = saving
 
@@ -37,11 +37,9 @@ class Bank(User):
     def show_bal(self, account):
         # Checking account
         if account == 0:
-            print(f'${self.checking} in checking')
             return self.checking
         # Saving account
         elif account == 1:
-            print(f'${self.saving} in saving')
             return self.saving
         else:
             return -1
